@@ -6,14 +6,14 @@
 #include "BTMGlobalDfs.h"
 
 #define VOL     1
-#define OHM     1
-#define AMP     1
-#define MAMP    1
+#define OHM     0
+#define AMP     0
+#define MAMP    0
 
 #if VOL
 int volX[8] =   {50, 1200, 1300, 3600, 3700, 13400, 13500, 30000};
-float volY[8] = {48, 1199, 1299, 3599, 3699, 13399, 13499, 29999};
-float volY_n[8]={51, 1201, 1301, 3601, 3701, 13401, 13501, 30001};
+float volY[8] = {40, 1200, 1420, 3760, 3850, 13650, 13780, 30300};
+float volY_n[8]={43, 1060, 1170, 3520, 3300, 13030, 13130, 29400};
 #endif
 
 #if OHM

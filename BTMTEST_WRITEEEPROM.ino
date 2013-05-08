@@ -7,8 +7,8 @@
 
 #define VOL     1
 #define OHM     0
-#define AMP     0
-#define MAMP    0
+#define AMP     1
+#define MAMP    1
 
 #if VOL
 int volX[8] =   {50, 1200, 1300, 3600, 3700, 13400, 13500, 30000};
@@ -22,15 +22,15 @@ float ohmY[8] = {11, 1001, 1101, 10001, 11001, 100001, 110001, 1000001};
 #endif
 
 #if AMP
-int ampX[4]   = {50, 210, 230, 2000};
-float ampY[4] = {51, 211, 231, 2001};
-float ampY_n[4]={49, 209, 229, 1999};
+int ampX[4]   = {100, 200, 250, 2000};
+float ampY[4] = {110, 215, 260, 2100};
+float ampY_n[4]={92,  195, 215, 2070};
 #endif
 
 #if MAMP
-int mampX[2]      = {30, 200};
-float mampY[2]    = {31, 201};
-float mampY_n[2]  = {29, 199};
+int mampX[2]      = {50, 200};
+float mampY[2]    = {50, 200};
+float mampY_n[2]  = {48, 196};
 #endif
 
 
@@ -51,11 +51,11 @@ void writeOhm()
 {
 #if OHM
     EEPROM.write(1, 0x55);
+    
     for(int i = 0; i<8; i++)
     {
         EEPM.write(EEPADDROHMX+4*i, &ohmX[i], sizeof(long));
         EEPM.write(EEPADDROHMY+4*i, &ohmY[i], sizeof(float));
-        
         ohmX[i] = 0;
     }
     
